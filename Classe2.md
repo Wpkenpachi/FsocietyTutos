@@ -5,7 +5,7 @@ de se ver como uma classe, mas agora vamos expandir possibilidades com um exempl
 
 ## Segundo Exemplo
 
-Vamos criar uma classe mediadora, que vai aplicar os danos e as curas entre os objetos das classes constrídas anteiormente
+Vamos criar uma classe mediadora, que vai aplicar os danos entre os objetos das classes constrídas anteiormente
  ([se quiser dar uma olhada nelas antes de continuar, aqui estão](Classe.md)).
 
 ```php
