@@ -1,0 +1,165 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>    
+
+<h1>O que é uma Classe?</h1>
+
+<p>Por muitas vezes vocês já devem ter ouvido falar delas... as classes.
+Mas se você nunca conseguiu compreender esse conceito, vou tentar <strong>AGORA</strong>
+te ensinar isso de forma simples!</p>
+
+<p><em>Vou apelar àqueles exemplos bem comuns como:</em></p>
+
+<h3>Primeiro Exemplo</h3>
+
+<p>Vamos usar um exemplo que é familiar ao termo classe...
+Temos então as classes Mago e Humano.
+Pequena descrição sobre ambos..</p>
+
+<p>Humano: </p>
+
+<p>Características
+- Raça Fraca =&gt; 200 de HP
+- Capacidade de 5% de Cura.
+- Tem baixo-medio dano bruto =&gt; 100 Dano 
+- Mas é astuta pra construção de estruturas e Resistentes e engenharias que causam bastante dano =&gt; 600 Astúcia
+- Mana 120</p>
+
+<p>Habilidades comuns dos seres humanos:
+- Construir
+- Atacar
+- Curar </p>
+
+<p>Magos: </p>
+
+<p>Características
+- Raça Média =&gt; 400 de HP
+- Capacidade de 50% de Cura.
+- Tem baixo dano bruto =&gt; 50 Dano 
+- São Habilidosos na arte da magia =&gt; 600 Magia
+- Mana 200</p>
+
+<p>Habilidades comuns dos magos:
+- Invocar Magia
+- Atacar
+- Curar </p>
+
+<p>As classes podem possuir atributos/propriedades e também funções e métodos. No caso em questão as <strong>características</strong> de cada classe apresentada acima, seriam os atributos/propriedades e suas <strong>habilidades comuns</strong> seriam as funções/métodos. Então o exemplo feito em php ficaria assim:</p>
+
+<h3>Classe de Humanos</h3>
+
+<p><code></code>`php
+    &lt;?php
+    class Humano {
+        // Atributos
+        public $HP;
+        public $CURA;
+        public $DANO;
+        public $ASTUCIA;</p>
+
+<pre><code>    function __construct(){
+        $this-&gt;HP = 400;
+        $this-&gt;CURA = 50;
+        $this-&gt;DANO = 50;
+        $this-&gt;ASTUCIA = 600;
+    }
+
+    // Funções/Métodos
+    public function construir(){
+
+    }
+
+    public function atacar(){
+
+    }
+
+    public function curar(){
+
+    }
+}</code></pre>
+
+<p><code></code>`</p>
+
+<h3>Classe de Magos</h3>
+
+<p><code></code>`php
+    class Mago { // Classe de Magos
+        // Atributos
+        public $HP;
+        public $CURA;
+        public $DANO;
+        public $MAGIA;
+        public $MANA;</p>
+
+<pre><code>    function __construct(){
+        $this-&gt;HP = 400;
+        $this-&gt;CURA = 50;
+        $this-&gt;DANO = 50;
+        $this-&gt;MAGIA = 600;
+        $this-&gt;MANA = 200;
+    }
+
+    // Funções/Métodos
+    public function invocarMagia(){
+
+    }
+
+    public function atacar(){
+
+    }
+
+    public function curar(){
+
+    }
+
+}</code></pre>
+
+<p><code></code>`</p>
+
+<p>Opa! Tem coisa não explicada aí nesse código em?!
+Pois é... Temos alguns conceitos aí aplicados que vou explicar agora:</p>
+
+<ul><li><code>public</code><ul><li>A palavra chave public se trata da visibilidade
+que esta variável(propriedade) pode ter. Mas como assim?
+Isso quer dizer que essa variável vai poder ser acessada também
+fora dessa classe. Mas isso vocês vão entender quando eu falar sobre instanciamento de um objeto de classe.
+Saiba que também existem as palavras chaves private, e protected.
+Que não vou explicar agora...</li></ul></li><li><code>__construct()</code><ul><li>O __construct() é também uma função da classe, só que a diferença entre
+ela e as outras funções é que: Ela é executada assim que um objeto dessa classe é instanciado. Mas como disse esse assunto de &#39;objeto&#39; não é pra esse parágrafo. A nível de conhecimento saibam que existe também a função <code>__destruct()</code> que também é automaticamente chamada assim que as referências ao objeto dessa classe forem removidas ou quando este objeto é destruído (Desalocado). Foque em entender que estas são funções que estão automaticamente presentes em qualquer classe.</li></ul></li><li><code>$this</code><ul><li>O $this é uma pseudo-variável que pode ser chamada, caso você esteja
+em um contexto de objeto. Trocando por palavras simples, é através dela
+que você vai poder acessar propriedades desta, ou de outras classes, ou chamar métodos e funções delas.</li></ul></li></ul>
+
+<h2>Objeto de Classe</h2>
+
+<p>Agora sim vamos falar deles! Os objetos. Mas o que são? 
+Os objetos são em palavras simples uma abstração única de uma classe.
+Dentro de um objeto, vão todas as propriedades, e todos os métodos e funções descritos em sua classe. É a partir de objetos que você faz uso da classe, veja como fazemos pra instanciar um objeto de uma classe:</p>
+
+<p><code>php
+    $objeto = new Homem;
+</code></p>
+
+<p>Simples, não? Só utilizar a instrução <code>new</code> antes do nome da classe.
+<em>PS</em>: As Classes têm de ser definidas antes de serem instanciadas.</p>
+
+<p>Agora vamos voltar àquelas observações que deixei pra falar só depois que explicasse mais sobre objetos:</p>
+
+<ul><li><code>public</code><ul><li>Eu só posso ter acesso a atributos e métodos através do objeto, caso 
+eles estejam declarados como publicos (public). Então no caso do exemplo acima, eu poderia acessar todas as características e habilidades
+de um Humano, ou Mago da seguinte forma:
+<code>php
+$objeto-&gt;HP -= 10; // Isso é equivalente a: $objeto-&gt;HP = $objeto-&gt;HP - 10
+$objeto-&gt;atacar(); // Chamando o método atacar.
+</code></li></ul></li><li><code>$this</code><ul><li>O $this serve pra você ter acesso a atributos e métodos dentro da
+própria classe, segue o exemplo:
+<code>php
+//{dentro da classe Mago...}
+public function invocarMagia(){
+$this-&gt;MANA -= 20; // Subtraindo 20 dos meus 200 de mana atuais.
+$this-&gt;curar();// chamando a função curar.
+}
+</code></li></ul></li></ul>
+
+<p>Próxima postagem darei um exemplo de classe, com este mesmo tema (humanos e elfos), porém em um contexto diferente :D.</p>
+</html>
