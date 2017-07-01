@@ -157,4 +157,4 @@ Agora vamos voltar àquelas observações que deixei pra falar só depois que ex
       }
       ```
 
-Próxima postagem darei um exemplo de classe, com este mesmo tema (humanos e elfos), porém em um contexto diferente :D.
+Próxima postagem darei um exemplo de classe, com este mesmo tema (humanos e magos), porém em um contexto diferente :D.
